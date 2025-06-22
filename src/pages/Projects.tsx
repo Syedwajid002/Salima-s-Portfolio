@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Calendar, Clock, Tag } from 'lucide-react';
+import { ExternalLink, Calendar, Clock, Tag, X } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 
@@ -8,6 +8,7 @@ interface Project {
   id: number;
   title: string;
   description: string;
+  details: string;
   category: string;
   duration: string;
   date: string;
@@ -16,75 +17,73 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
-  const [activeCategory, setActiveCategory] = React.useState<string>('all');
-  
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   const projects: Project[] = [
     {
       id: 1,
-      title: 'IT Service Desk KPI Dashboard',
-      description: 'Created interactive dashboards to monitor key performance metrics for the IT service desk, including ticket resolution times, customer satisfaction, and agent productivity.',
-      category: 'dashboards',
-      duration: '3 months',
-      date: 'Jan 2023',
-      image: 'https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      title: 'Wi-Fi Coverage Mapping',
+      description: 'Mapped Wi-Fi coverage across campus using Heatmap software to optimize AP placement.',
+      details: 'Used NetSpot and Ekahau tools to scan and visualize wireless signal strength. Identified coverage gaps and proposed new AP placements in dead zones. Documented signal interference sources and drafted improvement plans.',
+      category: 'networking',
+      duration: '2 weeks',
+      date: 'Jan 2024',
+      image: 'https://images.pexels.com/photos/1054397/pexels-photo-1054397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
     {
       id: 2,
-      title: 'Network Infrastructure Upgrade',
-      description: 'Managed a comprehensive network upgrade project, including planning, vendor selection, implementation, and staff training.',
-      category: 'management',
-      duration: '6 months',
-      date: 'Aug 2022',
-      image: 'https://images.pexels.com/photos/2881229/pexels-photo-2881229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      title: 'Server Room Setup',
+      description: 'Assisted in configuring and organizing a small server room for a lab environment.',
+      details: 'Helped rack and stack servers, patch network cables, and label equipment. Configured basic RAID setups and static IPs. Followed safety and ventilation guidelines while working with faculty supervision.',
+      category: 'infrastructure',
+      duration: '1 month',
+      date: 'Mar 2024',
+      image: 'https://images.pexels.com/photos/442152/pexels-photo-442152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
     {
       id: 3,
-      title: 'IT Team Coaching Framework',
-      description: 'Developed a structured coaching system for IT team leaders, including templates for 1-on-1 meetings, performance reviews, and skill development plans.',
-      category: 'coaching',
-      duration: '4 months',
-      date: 'Mar 2022',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      title: 'Basic Firewall Configuration',
+      description: 'Worked on pfSense and Ubiquiti firewalls to apply basic security rules and NAT policies.',
+      details: 'Set up firewall rules for lab segments, tested port forwarding, and implemented basic logging. Demonstrated understanding of public vs private IP concepts and port access control.',
+      category: 'security',
+      duration: '3 weeks',
+      date: 'May 2024',
+      image: 'https://images.pexels.com/photos/1054398/pexels-photo-1054398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
     {
       id: 4,
-      title: 'Server Migration Project',
-      description: 'Led a cross-functional team in migrating on-premises servers to cloud infrastructure, including risk assessment, data transfer planning, and implementation.',
-      category: 'management',
-      duration: '5 months',
-      date: 'Nov 2021',
-      image: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      title: 'Printer Network Troubleshooting',
+      description: 'Diagnosed and fixed printer network issues using IP tools and configuration interfaces.',
+      details: 'Resolved IP conflicts, updated firmware on HP printers, and configured static IPs for consistent printing in a shared network environment. Logged troubleshooting steps and shared a guide with peers.',
+      category: 'support',
+      duration: '10 days',
+      date: 'Feb 2024',
+      image: 'https://images.pexels.com/photos/4709297/pexels-photo-4709297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
     {
       id: 5,
-      title: 'IT Budget Planning Tool',
-      description: 'Created a comprehensive budget planning and tracking system to improve financial management and resource allocation for IT operations.',
-      category: 'dashboards',
-      duration: '2 months',
-      date: 'Jul 2021',
-      image: 'https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    },
-    {
-      id: 6,
-      title: 'Customer Service Workflow Redesign',
-      description: 'Redesigned the customer service workflow to improve response times and customer satisfaction, including new escalation procedures and SLA monitoring.',
-      category: 'workflows',
-      duration: '3 months',
-      date: 'Apr 2021',
-      image: 'https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      title: 'System Imaging Lab',
+      description: 'Created and deployed system images to lab PCs using Clonezilla and PXE boot.',
+      details: 'Standardized operating systems and software configurations across 30+ lab machines. Reduced manual installation time by 80%. Validated image integrity and post-deployment functionality.',
+      category: 'deployment',
+      duration: '3 weeks',
+      date: 'Apr 2024',
+      image: 'https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
   ];
 
   const categories = [
     { id: 'all', name: 'All Projects' },
-    { id: 'dashboards', name: 'KPI Dashboards' },
-    { id: 'coaching', name: 'Coaching Templates' },
-    { id: 'workflows', name: 'Workflows' },
-    { id: 'management', name: 'Management' },
+    { id: 'networking', name: 'Networking' },
+    { id: 'infrastructure', name: 'Infrastructure' },
+    { id: 'security', name: 'Security' },
+    { id: 'support', name: 'Support' },
+    { id: 'deployment', name: 'Deployment' },
   ];
 
-  const filteredProjects = activeCategory === 'all' 
-    ? projects 
+  const filteredProjects = activeCategory === 'all'
+    ? projects
     : projects.filter(project => project.category === activeCategory);
 
   return (
@@ -97,9 +96,9 @@ const Projects: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-white mb-4">Projects</h1>
+            <h1 className="text-white mb-4">My Projects</h1>
             <p className="text-xl text-primary-100">
-              A showcase of my IT management projects and accomplishments.
+              A showcase of hands-on IT infrastructure projects.
             </p>
           </motion.div>
         </div>
@@ -110,7 +109,7 @@ const Projects: React.FC = () => {
         <div className="container-custom">
           <SectionHeading
             title="Portfolio Projects"
-            subtitle="Explore my work across various IT management domains"
+            subtitle="Explore practical work and academic project experiences"
           />
 
           {/* Filter Categories */}
@@ -119,11 +118,10 @@ const Projects: React.FC = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-4 py-2 rounded-full transition-all ${
-                  activeCategory === category.id
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                className={`px-4 py-2 rounded-full transition-all ${activeCategory === category.id
+                  ? 'bg-primary-500 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
               >
                 {category.name}
               </button>
@@ -135,11 +133,12 @@ const Projects: React.FC = () => {
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                className="card card-hover overflow-hidden"
+                className="card card-hover overflow-hidden cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                onClick={() => setSelectedProject(project)}
               >
                 <div className="relative h-48">
                   <img
@@ -154,8 +153,7 @@ const Projects: React.FC = () => {
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-3">{project.title}</h3>
                   <p className="text-gray-600 mb-4">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-2">
                     <div className="flex items-center">
                       <Calendar size={16} className="mr-1" />
                       <span>{project.date}</span>
@@ -169,22 +167,36 @@ const Projects: React.FC = () => {
                       <span className="capitalize">{project.category}</span>
                     </div>
                   </div>
-                  
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium"
-                    >
-                      <span>View Details</span>
-                      <ExternalLink size={16} className="ml-1" />
-                    </a>
-                  )}
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Project Popup */}
+          {selectedProject && (
+            <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center px-4">
+              <div className="bg-white max-w-xl w-full p-6 rounded-xl shadow-lg relative animate-fadeIn">
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl"
+                >
+                  <X />
+                </button>
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-40 object-cover rounded-lg mb-4"
+                />
+                <h2 className="text-2xl font-bold mb-2 text-gray-800">{selectedProject.title}</h2>
+                <p className="text-gray-600 mb-4">{selectedProject.details}</p>
+                <div className="text-sm text-gray-500 flex gap-6 flex-wrap">
+                  <span className="flex items-center"><Calendar size={14} className="mr-1" /> {selectedProject.date}</span>
+                  <span className="flex items-center"><Clock size={14} className="mr-1" /> {selectedProject.duration}</span>
+                  <span className="flex items-center"><Tag size={14} className="mr-1" /> {selectedProject.category}</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </PageTransition>

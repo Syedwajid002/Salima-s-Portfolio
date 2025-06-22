@@ -133,11 +133,11 @@ const Home: React.FC = () => {
             >
               <img
                 src="https://images.pexels.com/photos/7114/laptop-mobile.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="KPI Dashboard Project"
+                alt="Server Room Setup"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">KPI Dashboard Implementation</h3>
+                <h3 className="text-xl font-bold mb-2">Server Room Setup</h3>
                 <p className="text-gray-600 mb-4">
                   Designed and deployed comprehensive performance dashboards to monitor key IT metrics and drive data-informed decisions.
                 </p>
@@ -161,7 +161,7 @@ const Home: React.FC = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Team Coaching Framework</h3>
+                <h3 className="text-xl font-bold mb-2">Basic Firewall Configuration</h3>
                 <p className="text-gray-600 mb-4">
                   Developed structured coaching templates and performance review processes for IT team development.
                 </p>

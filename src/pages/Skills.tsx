@@ -67,7 +67,7 @@ const Skills: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-white mb-4">Skills & Competencies</h1>
+            <h1 className="text-white mb-4">My Skills & Competencies</h1>
             <p className="text-xl text-primary-100">
               An overview of my IT management skills, technical abilities, and professional competencies.
             </p>
@@ -100,18 +100,18 @@ const Skills: React.FC = () => {
                   <XAxis dataKey="name" />
                   <YAxis domain={[0, 100]} />
                   <Tooltip />
-                  <Line 
-                    type="monotone" 
-                    dataKey="value" 
-                    stroke="#0a4d68" 
+                  <Line
+                    type="monotone"
+                    dataKey="value"
+                    stroke="#0a4d68"
                     strokeWidth={3}
-                    activeDot={{ r: 8 }} 
+                    activeDot={{ r: 8 }}
                   />
                 </LineChart>
               </ResponsiveContainer>
             </div>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 mt-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -121,17 +121,17 @@ const Skills: React.FC = () => {
             >
               <h3 className="text-xl font-bold mb-4">Leadership Approach</h3>
               <p className="text-gray-600 mb-4">
-                My leadership style emphasizes clear communication, team empowerment, and strategic vision. 
-                I focus on creating an environment where IT professionals can excel while aligning their work 
+                My leadership style emphasizes clear communication, team empowerment, and strategic vision.
+                I focus on creating an environment where IT professionals can excel while aligning their work
                 with organizational goals.
               </p>
               <p className="text-gray-600">
-                I believe in leading by example, providing regular coaching, and establishing clear metrics 
-                for success. This approach has consistently resulted in high-performing teams and successful 
+                I believe in leading by example, providing regular coaching, and establishing clear metrics
+                for success. This approach has consistently resulted in high-performing teams and successful
                 project outcomes.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -140,12 +140,12 @@ const Skills: React.FC = () => {
             >
               <h3 className="text-xl font-bold mb-4">Project Management Methodology</h3>
               <p className="text-gray-600 mb-4">
-                I employ a hybrid approach to project management, drawing from both traditional waterfall and 
-                Agile methodologies depending on project requirements. This flexibility ensures optimal 
+                I employ a hybrid approach to project management, drawing from both traditional waterfall and
+                Agile methodologies depending on project requirements. This flexibility ensures optimal
                 resource allocation and timely delivery.
               </p>
               <p className="text-gray-600">
-                Key aspects include comprehensive planning, regular stakeholder communication, risk management, 
+                Key aspects include comprehensive planning, regular stakeholder communication, risk management,
                 and continuous progress tracking through KPIs and visual dashboards.
               </p>
             </motion.div>
@@ -179,10 +179,10 @@ const Skills: React.FC = () => {
                   <YAxis domain={[0, 100]} />
                   <Tooltip />
                   <Legend />
-                  <Bar 
-                    dataKey="proficiency" 
-                    name="Proficiency Level" 
-                    fill="#06bebe" 
+                  <Bar
+                    dataKey="proficiency"
+                    name="Proficiency Level"
+                    fill="#06bebe"
                     radius={[5, 5, 0, 0]}
                   />
                 </BarChart>
@@ -193,7 +193,7 @@ const Skills: React.FC = () => {
           {/* IT Tools */}
           <div className="mt-12">
             <h3 className="text-2xl font-bold mb-6">IT Tools Proficiency</h3>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {tools.map((toolCategory, index) => (
                 <motion.div
@@ -265,22 +265,22 @@ const Skills: React.FC = () => {
             >
               <h3 className="text-xl font-bold mb-4">Communication & Leadership</h3>
               <p className="text-gray-600 mb-6">
-                Strong communication skills are at the core of my management approach. I excel at translating 
-                technical concepts for non-technical stakeholders, facilitating productive meetings, and 
+                Strong communication skills are at the core of my management approach. I excel at translating
+                technical concepts for non-technical stakeholders, facilitating productive meetings, and
                 creating clear documentation.
               </p>
-              
+
               <h3 className="text-xl font-bold mb-4">Problem Solving & Decision Making</h3>
               <p className="text-gray-600 mb-6">
-                I approach problems methodically, gathering data, analyzing root causes, and developing 
-                structured solutions. My decision-making process balances technical requirements, business 
+                I approach problems methodically, gathering data, analyzing root causes, and developing
+                structured solutions. My decision-making process balances technical requirements, business
                 needs, and resource constraints.
               </p>
-              
+
               <h3 className="text-xl font-bold mb-4">Adaptability & Continuous Learning</h3>
               <p className="text-gray-600">
-                The technology landscape is constantly evolving, requiring adaptability and commitment to 
-                ongoing learning. I regularly update my skills through professional development, industry 
+                The technology landscape is constantly evolving, requiring adaptability and commitment to
+                ongoing learning. I regularly update my skills through professional development, industry
                 conferences, and self-directed learning.
               </p>
             </motion.div>
