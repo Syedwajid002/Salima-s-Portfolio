@@ -172,6 +172,14 @@ const Header: React.FC = () => {
             About
           </NavLink>
           <NavLink
+            to="/KPI"
+            className={({ isActive }) =>
+              isActive ? 'nav-link nav-link-active' : 'nav-link'
+            }
+          >
+            KPI & Budget Tools
+          </NavLink>
+          <NavLink
             to="/CsIm"
             className={({ isActive }) =>
               isActive
