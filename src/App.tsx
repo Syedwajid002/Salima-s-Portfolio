@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import CsIm from './pages/CsIm'
 import SalimaKPIBudget from './pages/KpiBudget';
+import TeamLeadershipToolsStandalone from './pages/TlHr';
 function App() {
   const location = useLocation();
 
@@ -27,7 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/CsIm" element={<CsIm />} />
           <Route path="/KPI" element={<SalimaKPIBudget />} />
-
+          <Route path='TeamLeader' element={<TeamLeadershipToolsStandalone />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>

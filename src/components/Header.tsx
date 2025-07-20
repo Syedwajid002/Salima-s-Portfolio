@@ -63,6 +63,15 @@ const Header: React.FC = () => {
           >
             About
           </NavLink>
+          <NavLink
+            to="/TeamLeader"
+            className={({ isActive }) =>
+              isActive ? 'nav-link nav-link-active' : 'nav-link'
+            }
+          >
+            Team
+            Leadership & HR Tools
+          </NavLink>
 
           <div className="relative group">
             <button className="nav-link flex items-center gap-1">
@@ -107,23 +116,39 @@ const Header: React.FC = () => {
               </NavLink>
             </div>
           </div>
-          <NavLink
-            to="/CsIm"
-            className={({ isActive }) =>
-              isActive ? 'nav-link nav-link-active' : 'nav-link'
-            }
-          >
-            Customer Service and Incident Management
-          </NavLink>
 
-          <NavLink
-            to="/KPI"
-            className={({ isActive }) =>
-              isActive ? 'nav-link nav-link-active' : 'nav-link'
-            }
-          >
-            KPI & Budget Tools
-          </NavLink>
+
+          <div className="relative group">
+            <button className="nav-link flex items-center gap-1">
+              IT Tools
+              <svg className="w-4 h-4 mt-[1px]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div className="absolute hidden group-hover:block z-50 bg-white shadow-md rounded-lg mt-2 w-60 border border-gray-200">
+              <NavLink
+                to="/KPI"
+                className={({ isActive }) =>
+                  (isActive ? "bg-blue-50" : "") +
+                  " flex items-center gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-blue-100"
+                }
+              >
+
+                KPI & Budget Tools
+              </NavLink>
+
+              <NavLink
+                to="/CsIm"
+                className={({ isActive }) =>
+                  (isActive ? "bg-blue-50" : "") +
+                  " flex items-center gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-blue-100"
+                }
+              >
+                Customer Service and Incident Management
+              </NavLink>
+            </div>
+          </div>
           <NavLink
             to="/contact"
             className={({ isActive }) =>
@@ -170,6 +195,17 @@ const Header: React.FC = () => {
             }
           >
             About
+          </NavLink>
+          <NavLink
+            to="/TeamLeader"
+            className={({ isActive }) =>
+              isActive
+                ? 'nav-link nav-link-active py-3 border-b border-gray-100'
+                : 'nav-link py-3 border-b border-gray-100'
+            }
+          >
+            Team
+            Leadership & HR Tools
           </NavLink>
           <NavLink
             to="/KPI"
