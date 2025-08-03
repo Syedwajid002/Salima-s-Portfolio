@@ -1,7 +1,13 @@
 import React from "react";
 
 const EthicsAssignment = () => (
-  <div className="min-h-screen bg-blue-50 mt-16 text-blue-900 font-sans px-4 md:px-12 py-10 space-y-10 max-w-4xl mx-auto">
+  <div className="min-h-screen bg-blue-50 mt-6 text-blue-900 font-sans px-4 md:px-12 py-10 space-y-10 max-w-4xl mx-auto">
+    <header className="bg-gradient-to-r from-cyan-800 to-cyan-500 text-white py-20 px-6 text-center mt-16">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4">Ethics, Systems & Culture</h1>
+      <p className="text-lg md:text-xl max-w-2xl mx-auto">
+        Exploring ethical leadership, cultural adaptation, and professional values in IT management.
+      </p>
+    </header>
     {/* 1. Ethical Dilemma Response */}
     <section className="bg-white rounded-lg shadow p-6">
       <h2 className="text-2xl font-bold mb-2">1. Ethical Dilemma Response</h2>
