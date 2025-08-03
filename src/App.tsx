@@ -13,10 +13,7 @@ import NotFound from './pages/NotFound';
 import CsIm from './pages/CsIm'
 import SalimaKPIBudget from './pages/KpiBudget';
 import TeamLeadershipToolsStandalone from './pages/TlHr';
-<<<<<<< HEAD
 import EthicsAssignment from './pages/ethics'
-=======
->>>>>>> 4746850a3dc8f34bab3c979565288b75cf29da12
 function App() {
   const location = useLocation();
 
@@ -33,10 +30,7 @@ function App() {
           <Route path="/CsIm" element={<CsIm />} />
           <Route path="/KPI" element={<SalimaKPIBudget />} />
           <Route path='TeamLeader' element={<TeamLeadershipToolsStandalone />} />
-<<<<<<< HEAD
           <Route path="/ethics" element={<EthicsAssignment />} />
-=======
->>>>>>> 4746850a3dc8f34bab3c979565288b75cf29da12
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
