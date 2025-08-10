@@ -115,20 +115,15 @@ const About: React.FC = () => {
               <div className="mb-8">
                 <h4 className="text-xl font-bold mb-1">MSc in Information Technology</h4>
                 <p className="text-gray-500 mb-2">Stanford University</p>
-                <p className="text-gray-700">2017 - 2019</p>
+                <p className="text-gray-700">2024 - 2025</p>
               </div>
 
               <div className="mb-8">
                 <h4 className="text-xl font-bold mb-1">BSc in Computer Science</h4>
                 <p className="text-gray-500 mb-2">University of California, Berkeley</p>
-                <p className="text-gray-700">2013 - 2017</p>
+                <p className="text-gray-700">2019 - 2023</p>
               </div>
 
-              <div>
-                <h4 className="text-xl font-bold mb-1">Professional Development</h4>
-                <p className="text-gray-500 mb-2">IT Leadership Program</p>
-                <p className="text-gray-700">2020</p>
-              </div>
             </motion.div>
 
             {/* Certifications */}
