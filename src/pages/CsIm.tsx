@@ -315,12 +315,12 @@ I've reviewed your ticket and identified that this appears to be related to a re
 
 You should start seeing your emails sync normally very soon. I'll send you a follow-up email once I've confirmed the fix is working, and I'll also call you in about 20 minutes to make sure everything is functioning as expected.
 
-If you notice any other issues or have questions, please don't hesitate to reach out to me directly at extension 1234 or reply to this ticket. Your productivity is important to us, and I'm committed to making sure this is completely resolved.
+If you notice any other issues or have questions, please don't hesitate to reach out to me directly at extension +14 or reply to this ticket. Your productivity is important to us, and I'm committed to making sure this is completely resolved.
 
 Best regards,  
 Alex Thompson  
 IT Support Specialist  
-Direct: (555) 123-1234  
+Direct: (555) +1-+14  
 Ticket #: CS-2024-0156`;
 
     useEffect(() => {

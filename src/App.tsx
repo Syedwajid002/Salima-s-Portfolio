@@ -14,6 +14,9 @@ import CsIm from './pages/CsIm'
 import SalimaKPIBudget from './pages/KpiBudget';
 import TeamLeadershipToolsStandalone from './pages/TlHr';
 import EthicsAssignment from './pages/ethics'
+import SalimaCoachingToolkit from './pages/Coaching';
+import SummaryPage from './pages/Summary';
+import PortfolioTimeline from './pages/Timeline';
 function App() {
   const location = useLocation();
 
@@ -31,6 +34,12 @@ function App() {
           <Route path="/KPI" element={<SalimaKPIBudget />} />
           <Route path='TeamLeader' element={<TeamLeadershipToolsStandalone />} />
           <Route path="/ethics" element={<EthicsAssignment />} />
+          <Route path="/coaching" element={<SalimaCoachingToolkit />} />
+          <Route path="/salimas-summary" element={<SummaryPage />} />
+          <Route path="/timeline" element={<PortfolioTimeline />} />
+
+
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>

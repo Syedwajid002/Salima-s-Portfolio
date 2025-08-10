@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
               <strong>Email:</strong> Salima2025@example.com
             </p>
             <p className="text-primary-100 mb-2">
-              <strong>Phone:</strong> (123) 456-7890
+              <strong>Phone:</strong> (+1) 957-7890
             </p>
             <p className="text-primary-100 mb-2">
               <strong>Location:</strong> New York, NY
